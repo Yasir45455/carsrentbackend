@@ -17,6 +17,7 @@ console.log(req.body)
 
     let mailOptions = {
         from: email,
+replyTo: email,
         to: "yasirkh261@gmail.com", // Your Email (Jis par message receive karna hai)
         subject: subject,
         text: `Name: ${username}\nEmail: ${email}\n\nMessage: ${message}`,
