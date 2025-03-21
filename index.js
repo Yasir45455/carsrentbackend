@@ -8,7 +8,7 @@ const adminRoutes = require('./routes/adminRoutes');
 const carRoutes = require('./routes/carRoutes');
 const categoryRoutes = require('./routes/categoryRoutes'); 
 const bookingRoutes = require('./routes/bookingRoutes');
-
+const contactRoutes = require("./routes/contactRoutes");
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3004;
@@ -38,7 +38,7 @@ app.use("/admin", adminRoutes);
 app.use('/cars', carRoutes);
 app.use("/category", categoryRoutes);
 app.use('/bookings', bookingRoutes);
-
+app.use("/contact",contactRoutes);
 app.listen(PORT, () => {
     console.log("Server Started on", PORT);
 });
