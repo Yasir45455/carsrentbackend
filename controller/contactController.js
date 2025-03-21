@@ -18,7 +18,7 @@ console.log(req.body)
     let mailOptions = {
         from: email,
         to: "yasirkh261@gmail.com", // Your Email (Jis par message receive karna hai)
-        subject: `New Contact Form Submission: ${subject}`,
+        subject: subject,
         text: `Name: ${username}\nEmail: ${email}\n\nMessage: ${message}`,
     };
 
