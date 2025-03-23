@@ -1,9 +1,10 @@
 const nodemailer = require("nodemailer");
 
 exports.sendContactEmail = async (req, res) => {
-    const { email, username, subject, message } = req.body;
-console.log(req.body)
-    if (!email || !username || !subject || !message) {
+    const { email, username, phoneNumber, subject, message } = req.body;
+    console.log(req.body);
+
+    if (!email || !username || !phoneNumber || !subject || !message) {
         return res.status(400).json({ error: "All fields are required" });
     }
 
@@ -17,10 +18,10 @@ console.log(req.body)
 
     let mailOptions = {
         from: email,
-replyTo: email,
-        to: "yasirkh261@gmail.com", // Your Email (Jis par message receive karna hai)
+        replyTo: email,
+        to: "yasirkh261@gmail.com", // Jis email par message receive karna hai
         subject: subject,
-        text: `Name: ${username}\nEmail: ${email}\n\nMessage: ${message}`,
+        text: `Name: ${username}\nEmail: ${email}\nPhone Number: ${phoneNumber}\n\nMessage: ${message}`,
     };
 
     try {
